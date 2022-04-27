@@ -4,9 +4,11 @@ info:
   version: '1.0'
   contact:
     name: Leor Brenman
+    email: lbrenman@axway.com
   description: Stock Watch List API
 servers:
   - url: 'http://localhost:3000'
+    description: Leor Brenman
 paths:
   /watchlist:
     get:
