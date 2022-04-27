@@ -8,4 +8,6 @@ properties:
   lastPrice:
     type: number
   change:
-    type: number  
+    type: number
+  numShares:
+    type: number
