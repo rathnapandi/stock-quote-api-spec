@@ -72,7 +72,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                type: string
       operationId: get-stockquote
       description: Stock Quote
       parameters:
