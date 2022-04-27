@@ -1,0 +1,11 @@
+title: quote
+type: object
+x-tags:
+  - stock quote
+properties:
+  symbol:
+    type: string
+  lastPrice:
+    type: number
+  change:
+    type: number  

@@ -1,0 +1,60 @@
+openapi: 3.0.0
+info:
+  title: watchlist
+  version: '1.0'
+  contact:
+    name: Leor Brenman
+  description: Stock Watch List API
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  /watchlist:
+    get:
+      summary: Your GET endpoint
+      tags:
+        - Watch List
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ../models/quote.yaml
+              examples:
+                example-1:
+                  value:
+                    - symbol: TXN
+                      lastPrice: 174.74
+                      change: 2.4199982
+                    - symbol: AAPL
+                      lastPrice: 157.58
+                      change: 2.4900055
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: string
+              examples:
+                example-1:
+                  value: Error
+      operationId: get-watchlist
+      description: Stock Watch List API
+      parameters:
+        - schema:
+            type: array
+            items:
+              type: string
+          in: query
+          explode: false
+          name: stocklist
+          description: 'Comma separated list of stock symbols (e.g. aapl,txn,amzn)'
+          required: true
+          style: form
+components:
+  schemas: {}
+  securitySchemes: {}
+tags:
+  - name: Watch List
