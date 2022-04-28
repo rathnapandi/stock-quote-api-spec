@@ -1,3 +1,5 @@
+def configFile = 'config.json'
+
 pipeline {
    agent any
    
@@ -15,7 +17,6 @@ pipeline {
     }
 
    stages {
-      def configFile = 'config.json'
       stage('Import API to Axway API Manager') {
          steps {
             script{
