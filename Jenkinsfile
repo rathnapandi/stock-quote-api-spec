@@ -31,6 +31,7 @@ pipeline {
             
             script{
                def props = readJSON file: configFile
+               echo "Domain name to be updated ${domainName}"
                if(stage.equals("preprod")){
                   def list = new ArrayList()
                   list.add("prod")
