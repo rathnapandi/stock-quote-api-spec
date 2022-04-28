@@ -51,7 +51,8 @@ pipeline {
    post {
         always {
             echo 'Logout ARS'
-            sh '/home/centos/node_modules/axway/bin/axway acs logout'
+            sh 'cd /home/centos/node_modules/axway/bin/'
+            sh './axway acs logout'
         }
    }
 }
