@@ -7,7 +7,7 @@
 	"apiDefinition": "openapi.yaml",
 	"vhost": "forrester.demo.axway.com:8065",
 	"image": "stock.png",
-	"backendBasepath": "https://7ae6799d152c1ccbfe0e64ad9e3b4e48638d5de1.ars.us.axway.com/api",
+	"backendBasepath": "https://api.ars.us.axway.com/api",
 	"tags": {
 		"Imagine": [
 			"Axway",
