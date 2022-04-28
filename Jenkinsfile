@@ -26,12 +26,18 @@ pipeline {
                   sh 'axway acs login "${username} ${password}"'
                   domainName = sh 'axway acs list "${appName}" | grep URL: | grep us.axway.com | cut -c 20-200'
                   echo "Domain name ${domainName}"
+                  def props = readJSON file: configFile
+                  def backend = props.get("backendBasepath")
+                  def newUrl = new URIBuilder(URI.create(backend)).setHost(domainName).build().toString();
+                  echo "New URL ${newUrl}"
+                  props.put("backendBasepath",newUrl)
+                  writeJSON file: configFile, json: props
+                  
                }
             }
             
             script{
                def props = readJSON file: configFile
-               echo "Domain name to be updated ${domainName}"
                if(stage.equals("preprod")){
                   def list = new ArrayList()
                   list.add("prod")
