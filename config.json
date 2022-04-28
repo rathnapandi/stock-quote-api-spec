@@ -1,0 +1,50 @@
+{
+	"name": "Stock Watch List API",
+	"path": "/api/v1",
+	"state": "published",
+	"version": "1.0.0",
+	"organization": "API Development",
+	"apiDefinition": "./reference/watchlist.yaml",
+	"vhost": "forrester-preprod.demo.axway.com:8065",
+	"image": "weather-logo.jpg",
+	"backendBasepath": "https://7ae6799d152c1ccbfe0e64ad9e3b4e48638d5de1.ars.us.axway.com/api",
+	"tags": {
+		"Imagine": [
+			"Axway",
+			"Chantilly"
+		]
+	},
+	"authenticationProfiles": [{
+		"name": "_default",
+		"isDefault": true,
+		"parameters": {
+			"username": "zSi3JeWExBJuCsLj5vumcPMrQFaYTOLa",
+			"password": ""
+		},
+		"type": "http_basic"
+	}],
+	"securityProfiles": [{
+		"name": "_default",
+		"isDefault": true,
+		"devices": [{
+			"name": "API Key",
+			"type": "apiKey",
+			"order": 0,
+			"properties": {
+				"apiKeyFieldName": "KeyId",
+				"takeFrom": "HEADER",
+				"removeCredentialsOnSuccess": "true"
+			}
+		}]
+	}],
+	"clientOrganizations": [
+		"ALL"
+	],
+	"applications": [{
+		"name": "Test"
+	}],
+	"customProperties": {
+		"securityLevel": "public",
+		"publicAPI": true
+	}
+}
