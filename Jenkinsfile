@@ -15,22 +15,23 @@ pipeline {
     }
 
    stages {
+      def configFile = 'config.json'
       stage('Import API to Axway API Manager') {
          steps {
             script{
-               def props = readJSON file: 'config.json'
+               def props = readJSON file: configFile
                
                if(stage.equals("preprod")){
                   def list = new ArrayList()
                   list.add("prod")
                   def tags = props.get("tags")
                   tags.accumulate("nextStage", list)
-                  writeJSON file: 'config.json', json: props
+                  writeJSON file: configFile, json: props
                }
             }
             
             withCredentials([usernamePassword(credentialsId: "${stage}", usernameVariable: 'username', passwordVariable: 'password')])  {
-                sh 'mvn clean exec:java -Dexec.args="-h ${host} -u ${username} -p ${password} -c ./api-definition/4-complete-config.json -s api-env -f true -returnCodeMapping ${returnCodeMapping}"'
+               sh 'mvn clean exec:java -Dexec.args="-h ${host} -u ${username} -p ${password} -c  ${configFile} -f true -returnCodeMapping ${returnCodeMapping}"'
               }
      
          }
