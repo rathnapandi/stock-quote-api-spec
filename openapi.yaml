@@ -1,0 +1,111 @@
+openapi: 3.0.0
+info:
+  title: watchlist
+  version: '1.0'
+  contact:
+    name: Leor Brenman
+    email: lbrenman@axway.com
+  description: Stock Watch List API
+servers:
+  - url: 'http://localhost:8080/api'
+    description: Local
+  - description: ARS
+    url: 'https://7ae6799d152c1ccbfe0e64ad9e3b4e48638d5de1.ars.us.axway.com/api'
+paths:
+  /watchlist:
+    get:
+      summary: Your GET endpoint
+      tags:
+        - Watch List
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Quote'
+              examples:
+                example-1:
+                  value:
+                    - symbol: TXN
+                      lastPrice: 174.74
+                      change: 2.4199982
+                    - symbol: AAPL
+                      lastPrice: 157.58
+                      change: 2.4900055
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: string
+              examples:
+                example-1:
+                  value: Error
+      operationId: get-watchlist
+      description: Stock Watch List API
+      parameters:
+        - schema:
+            type: array
+            items:
+              type: string
+          in: query
+          explode: false
+          name: stocklist
+          description: 'Comma separated list of stock symbols (e.g. aapl,txn,amzn)'
+          required: true
+          style: form
+  /stockquote:
+    get:
+      summary: Your GET endpoint
+      tags:
+        - StockQuote
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Quote'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: string
+      operationId: get-stockquote
+      description: Stock Quote
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: symbol
+          description: Stock symbol (e.g. aapl)
+components:
+  schemas:
+    Quote:
+      title: quote
+      type: object
+      x-tags:
+        - stock quote
+      properties:
+        symbol:
+          type: string
+        lastPrice:
+          type: number
+        change:
+          type: number
+        numShares:
+          type: number
+  securitySchemes:
+    apikey:
+      name: apikey
+      type: apiKey
+      in: header
+tags:
+  - name: StockQuote
+  - name: Watch List
+security:
+  - apikey: []
