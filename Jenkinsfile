@@ -24,7 +24,7 @@ pipeline {
             withCredentials([usernamePassword(credentialsId: 'ars', usernameVariable: 'username', passwordVariable: 'password')])  {
                script {
                   sh 'axway acs login "${username} ${password}"'
-                  domainName = sh 'axway acs list "${appName}" | grep "URL:" | grep "us.axway.com" | cut -c 20-200'
+                  domainName = sh 'axway acs list "${appName}" | grep URL: | grep us.axway.com | cut -c 20-200'
                   echo "Domain name ${domainName}"
                }
             }
