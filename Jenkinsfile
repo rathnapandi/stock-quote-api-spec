@@ -19,6 +19,14 @@ pipeline {
    stages {
       stage('Import API to Axway API Manager') {
          steps {
+            
+            
+            withCredentials([usernamePassword(credentialsId: ars, usernameVariable: 'username', passwordVariable: 'password')])  {
+               sh 'acs login "${username} ${password}"'
+               domainName = sh 'axway acs list "My stock watch list" | grep "URL:" | grep "us.axway.com" | cut -c 20-200'
+               echo "Domain name ${domainName}"
+            }
+            
             script{
                def props = readJSON file: configFile
                if(stage.equals("preprod")){
@@ -30,11 +38,18 @@ pipeline {
                }
             }
             
+            
             withCredentials([usernamePassword(credentialsId: "${stage}", usernameVariable: 'username', passwordVariable: 'password')])  {
                sh 'mvn clean exec:java -Dexec.args="-h ${host} -u ${username} -p ${password} -c  ${configFile} -force  -returnCodeMapping ${returnCodeMapping}"'
             }
      
          }
       }
+   }
+   post {
+        always {
+            echo 'Logout ARS'
+            sh 'axway acs logout'
+        }
    }
 }
