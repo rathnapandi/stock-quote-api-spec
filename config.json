@@ -16,12 +16,13 @@
 	},
 	"authenticationProfiles": [{
 		"name": "_default",
-		"isDefault": true,
+		"isDefault": "true",
 		"parameters": {
-			"username": "zSi3JeWExBJuCsLj5vumcPMrQFaYTOLa",
-			"password": ""
+			"apiKey": "zSi3JeWExBJuCsLj5vumcPMrQFaYTOLa",
+			"apiKeyField": "apikey",
+			"httpLocation": "HEADER"
 		},
-		"type": "http_basic"
+		"type": "apiKey"
 	}],
 	"securityProfiles": [{
 		"name": "_default",
