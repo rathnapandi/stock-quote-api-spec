@@ -16,7 +16,7 @@ pipeline {
 
    stages {
       stage('Import API to Axway API Manager') {
-         def configFile = 'config.json'                                   
+         configFile = 'config.json'                                   
          steps {
             script{
                def props = readJSON file: configFile
