@@ -1,8 +1,10 @@
 pipeline {
    agent any
+   environment {
+         configFile = 'config.json'
+   }
    
-   tools {
-     
+   tools { 
       maven "maven"
    }
    
@@ -16,7 +18,6 @@ pipeline {
 
    stages {
       stage('Import API to Axway API Manager') {
-         configFile = 'config.json'                                   
          steps {
             script{
                def props = readJSON file: configFile
@@ -30,7 +31,7 @@ pipeline {
             }
             
             withCredentials([usernamePassword(credentialsId: "${stage}", usernameVariable: 'username', passwordVariable: 'password')])  {
-               sh 'mvn clean exec:java -Dexec.args="-h ${host} -u ${username} -p ${password} -c  $configFile -force  -returnCodeMapping ${returnCodeMapping}"'
+               sh 'mvn clean exec:java -Dexec.args="-h ${host} -u ${username} -p ${password} -c  ${configFile} -force  -returnCodeMapping ${returnCodeMapping}"'
             }
      
          }
