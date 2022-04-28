@@ -7,7 +7,7 @@ info:
     email: lbrenman@axway.com
   description: Stock Watch List API
 servers:
-  - url: 'http://localhost:3000'
+  - url: 'http://localhost:8080/api'
     description: Leor Brenman
 paths:
   /watchlist:
@@ -83,7 +83,13 @@ paths:
           description: Stock symbol (e.g. aapl)
 components:
   schemas: {}
-  securitySchemes: {}
+  securitySchemes:
+    apikey:
+      name: apikey
+      type: apiKey
+      in: header
 tags:
   - name: StockQuote
   - name: Watch List
+security:
+  - apikey: []
