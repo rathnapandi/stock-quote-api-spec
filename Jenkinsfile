@@ -32,7 +32,7 @@ pipeline {
             }
             
             withCredentials([usernamePassword(credentialsId: "${stage}", usernameVariable: 'username', passwordVariable: 'password')])  {
-               sh 'mvn clean exec:java -Dexec.args="-h ${host} -u ${username} -p ${password} -c  ${configFile} -f true -returnCodeMapping ${returnCodeMapping}"'
+               sh 'mvn clean exec:java -Dexec.args="-h ${host} -u ${username} -p ${password} -c  ${configFile} --force  -returnCodeMapping ${returnCodeMapping}"'
               }
      
          }
