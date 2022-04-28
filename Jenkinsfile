@@ -23,8 +23,8 @@ pipeline {
             
             withCredentials([usernamePassword(credentialsId: ars, usernameVariable: 'username', passwordVariable: 'password')])  {
                script {
-                  sh '/home/centos/node_modules/axway/bin/axway acs login "${username} ${password}"'
-                  domainName = sh '/home/centos/node_modules/axway/bin/axway acs list "My stock watch list" | grep "URL:" | grep "us.axway.com" | cut -c 20-200'
+                  sh 'axway acs login "${username} ${password}"'
+                  domainName = sh 'axway acs list "My stock watch list" | grep "URL:" | grep "us.axway.com" | cut -c 20-200'
                   echo "Domain name ${domainName}"
                }
             }
@@ -51,8 +51,7 @@ pipeline {
    post {
         always {
             echo 'Logout ARS'
-            sh 'cd /home/centos/node_modules/axway/bin'
-            sh './axway acs logout'
+            sh 'axway acs logout'
         }
    }
 }
