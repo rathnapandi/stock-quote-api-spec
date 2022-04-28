@@ -23,7 +23,7 @@ pipeline {
             
             withCredentials([usernamePassword(credentialsId: 'ars', usernameVariable: 'username', passwordVariable: 'password')])  {
                script {
-                  sh 'axway acs login "${username} ${password}"'
+                  //sh 'axway acs login "${username} ${password}"'
                   domainName = sh(script: 'axway acs list "${appName}" | grep "URL:" | grep "us.axway.com" | cut -c 20-200', returnStdout: true).toString().trim()
                   echo "Domain name ${domainName}"
                   def props = readJSON file: configFile
@@ -58,7 +58,7 @@ pipeline {
    post {
         always {
             echo 'Logout ARS'
-            sh 'axway acs logout'
+           // sh 'axway acs logout'
         }
    }
 }
