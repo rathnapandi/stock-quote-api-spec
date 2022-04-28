@@ -28,8 +28,7 @@ pipeline {
                   echo "Domain name ${domainName}"
                   def props = readJSON file: configFile
                   def backend = props.get("backendBasepath")
-                  def uri = new URI(backend)
-                  def newUrl =  new URI(uri.getScheme().toLowerCase(Locale.US), domainName,uri.getPath(), uri.getQuery(), uri.getFragment()).toString()
+                  def newUrl =  backend.replace("localhost", domainName)
                   echo "New URL ${newUrl}"
                   props.put("backendBasepath",newUrl)
                   writeJSON file: configFile, json: props
