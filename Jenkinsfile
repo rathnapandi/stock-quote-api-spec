@@ -18,8 +18,8 @@ pipeline {
       stage('Import API to Axway API Manager') {
          steps {
             script{
-               def props = readJSON file: configFile
                def configFile = 'config.json'
+               def props = readJSON file: configFile
                if(stage.equals("preprod")){
                   def list = new ArrayList()
                   list.add("prod")
