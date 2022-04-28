@@ -1,5 +1,3 @@
-def configFile = 'config.json'
-
 pipeline {
    agent any
    
@@ -21,7 +19,7 @@ pipeline {
          steps {
             script{
                def props = readJSON file: configFile
-               
+               def configFile = 'config.json'
                if(stage.equals("preprod")){
                   def list = new ArrayList()
                   list.add("prod")
@@ -32,8 +30,8 @@ pipeline {
             }
             
             withCredentials([usernamePassword(credentialsId: "${stage}", usernameVariable: 'username', passwordVariable: 'password')])  {
-               sh 'mvn clean exec:java -Dexec.args="-h ${host} -u ${username} -p ${password} -c  ${configFile} --force  -returnCodeMapping ${returnCodeMapping}"'
-              }
+               sh 'mvn clean exec:java -Dexec.args="-h ${host} -u ${username} -p ${password} -c  ${configFile} -force  -returnCodeMapping ${returnCodeMapping}"'
+            }
      
          }
       }
