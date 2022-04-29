@@ -1,0 +1,51 @@
+{
+	"name": "Stock Watch List API",
+	"path": "/api/v1",
+	"state": "published",
+	"version": "1.0.0",
+	"organization": "API Development",
+	"apiDefinition": "openapi.yaml",
+	"vhost": "forrester.demo.axway.com:8065",
+	"image": "stock.png",
+	"backendBasepath": "https://api.ars.us.axway.com/api",
+	"tags": {
+		"Imagine": [
+			"Axway",
+			"Chantilly"
+		]
+	},
+	"authenticationProfiles": [{
+		"name": "_default",
+		"isDefault": "true",
+		"parameters": {
+			"apiKey": "zSi3JeWExBJuCsLj5vumcPMrQFaYTOLa",
+			"apiKeyField": "apikey",
+			"httpLocation": "HEADER"
+		},
+		"type": "apiKey"
+	}],
+	"securityProfiles": [{
+		"name": "_default",
+		"isDefault": true,
+		"devices": [{
+			"name": "API Key",
+			"type": "apiKey",
+			"order": 0,
+			"properties": {
+				"apiKeyFieldName": "KeyId",
+				"takeFrom": "HEADER",
+				"removeCredentialsOnSuccess": "true"
+			}
+		}]
+	}],
+	"clientOrganizations": [
+		"ALL"
+	],
+	"applications": [{
+		"name": "Test"
+	}],
+	"customProperties": {
+		"securityLevel": "public",
+		"publicAPI": true
+	}
+}
