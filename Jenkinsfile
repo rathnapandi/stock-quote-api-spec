@@ -37,7 +37,7 @@ pipeline {
             }
             
             script{
-               sh 'java -cp /home/centos/openapi-mono-1.0.0.jar com.axway.apim.OpenApiMono ./reference/watchlist.yaml'
+               sh 'java -jar /home/centos/openapi-mono-1.0.0.jar ./reference/watchlist.yaml'
             }
             
             script{
