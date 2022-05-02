@@ -8,6 +8,9 @@
 	"vhost": "forrester.demo.axway.com:8065",
 	"image": "stock.png",
 	"backendBasepath": "https://api.ars.us.axway.com/api",
+	"markdownLocal": [
+	  "docs/Intro.md", "docs/Security.md"
+	],
 	"tags": {
 		"Imagine": [
 			"Axway",
