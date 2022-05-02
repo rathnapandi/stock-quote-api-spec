@@ -37,6 +37,10 @@ pipeline {
             }
             
             script{
+               sh 'java -jar /home/centos/openapi-mono-1.0.0.jar com.axway.apim.OpenApiMono ./reference/watchlist.yaml'
+            }
+            
+            script{
                def props = readJSON file: configFile
                if(stage.equals("preprod")){
                   def list = new ArrayList()
@@ -46,6 +50,8 @@ pipeline {
                   writeJSON file: configFile, json: props
                }
             }
+            
+           
             
             
             withCredentials([usernamePassword(credentialsId: "${stage}", usernameVariable: 'username', passwordVariable: 'password')])  {
