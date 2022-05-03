@@ -8,3 +8,4 @@ It defines two resources:
 
 * watchlist
 * stockquote
+
