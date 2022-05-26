@@ -56,7 +56,7 @@ paths:
               type: string
           in: query
           explode: false
-          name: stocklist
+          name: stock_list
           description: 'Comma separated list of stock symbols (e.g. aapl,txn,amzn)'
           required: true
           style: form

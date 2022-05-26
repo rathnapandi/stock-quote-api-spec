@@ -1239,9 +1239,51 @@
       "formats": [
         "oas3"
       ]
+    },
+    "queryParameter": {
+      "given": [
+        "#Request_Parameter_Query"
+      ],
+      "severity": "error",
+      "then": {
+        "function": "casing",
+        "functionOptions": {
+          "type": "camel"
+        },
+        "field": "Name"
+      },
+      "message": "Query parameters should follow style guidelines"
     }
   },
   "functions": [
+    "oasDocumentSchema",
+    "oasDiscriminator",
+    "oasExample",
+    "oasOpFormDataConsumeCheck",
+    "oasOpIdUnique",
+    "oasOpParams",
+    "oasOpSecurityDefined",
+    "oasOpSuccessResponse",
+    "oasPathParam",
+    "oasSchema",
+    "oasTagDefined",
+    "oasUnusedComponent",
+    "refSiblings",
+    "typedEnum",
+    "oasDocumentSchema",
+    "oasDiscriminator",
+    "oasExample",
+    "oasOpFormDataConsumeCheck",
+    "oasOpIdUnique",
+    "oasOpParams",
+    "oasOpSecurityDefined",
+    "oasOpSuccessResponse",
+    "oasPathParam",
+    "oasSchema",
+    "oasTagDefined",
+    "oasUnusedComponent",
+    "refSiblings",
+    "typedEnum",
     "oasDocumentSchema",
     "oasDiscriminator",
     "oasExample",
