@@ -1250,12 +1250,26 @@
         "functionOptions": {
           "type": "camel"
         },
-        "field": "Name"
+        "field": "name"
       },
       "message": "Query parameters should follow style guidelines"
     }
   },
   "functions": [
+    "oasDocumentSchema",
+    "oasDiscriminator",
+    "oasExample",
+    "oasOpFormDataConsumeCheck",
+    "oasOpIdUnique",
+    "oasOpParams",
+    "oasOpSecurityDefined",
+    "oasOpSuccessResponse",
+    "oasPathParam",
+    "oasSchema",
+    "oasTagDefined",
+    "oasUnusedComponent",
+    "refSiblings",
+    "typedEnum",
     "oasDocumentSchema",
     "oasDiscriminator",
     "oasExample",
