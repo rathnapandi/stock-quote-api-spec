@@ -7,10 +7,6 @@ info:
     email: lbrenman@axway.com
     url: 'mailto:lbrenman@axway.com'
   description: Stock Watch List API
-  license:
-    name: None
-    url: www.axway.com
-  termsOfService: www.axway.com
 servers:
   - url: 'http://localhost:8080/api'
     description: Local
