@@ -45,9 +45,6 @@
 	"clientOrganizations": [
 		"ALL"
 	],
-	"applications": [{
-		"name": "Test"
-	}],
 	"customProperties": {
 		"securityLevel": "public",
 		"publicAPI": true
