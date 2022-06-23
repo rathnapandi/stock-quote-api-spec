@@ -550,6 +550,20 @@
     }
   },
   "rules": {
+    "queryParameter": {
+      "given": [
+        "#Request_Parameter_Query"
+      ],
+      "severity": "error",
+      "then": {
+        "function": "casing",
+        "functionOptions": {
+          "type": "camel"
+        },
+        "field": "name"
+      },
+      "message": "Query parameters should follow style guidelines"
+    },
     "contact-url": {
       "given": [
         "#API_Contact"
@@ -560,7 +574,7 @@
         "field": "url"
       },
       "description": "Contact object should have \"url\"",
-      "message": "Contact object should have \"url\""
+      "message": "Contact object should have \"url\"."
     },
     "contact-email": {
       "given": [
@@ -1239,79 +1253,9 @@
       "formats": [
         "oas3"
       ]
-    },
-    "queryParameter": {
-      "given": [
-        "#Request_Parameter_Query"
-      ],
-      "severity": "error",
-      "then": {
-        "function": "casing",
-        "functionOptions": {
-          "type": "camel"
-        },
-        "field": "name"
-      },
-      "message": "Query parameters should follow style guidelines"
     }
   },
   "functions": [
-    "oasDocumentSchema",
-    "oasDiscriminator",
-    "oasExample",
-    "oasOpFormDataConsumeCheck",
-    "oasOpIdUnique",
-    "oasOpParams",
-    "oasOpSecurityDefined",
-    "oasOpSuccessResponse",
-    "oasPathParam",
-    "oasSchema",
-    "oasTagDefined",
-    "oasUnusedComponent",
-    "refSiblings",
-    "typedEnum",
-    "oasDocumentSchema",
-    "oasDiscriminator",
-    "oasExample",
-    "oasOpFormDataConsumeCheck",
-    "oasOpIdUnique",
-    "oasOpParams",
-    "oasOpSecurityDefined",
-    "oasOpSuccessResponse",
-    "oasPathParam",
-    "oasSchema",
-    "oasTagDefined",
-    "oasUnusedComponent",
-    "refSiblings",
-    "typedEnum",
-    "oasDocumentSchema",
-    "oasDiscriminator",
-    "oasExample",
-    "oasOpFormDataConsumeCheck",
-    "oasOpIdUnique",
-    "oasOpParams",
-    "oasOpSecurityDefined",
-    "oasOpSuccessResponse",
-    "oasPathParam",
-    "oasSchema",
-    "oasTagDefined",
-    "oasUnusedComponent",
-    "refSiblings",
-    "typedEnum",
-    "oasDocumentSchema",
-    "oasDiscriminator",
-    "oasExample",
-    "oasOpFormDataConsumeCheck",
-    "oasOpIdUnique",
-    "oasOpParams",
-    "oasOpSecurityDefined",
-    "oasOpSuccessResponse",
-    "oasPathParam",
-    "oasSchema",
-    "oasTagDefined",
-    "oasUnusedComponent",
-    "refSiblings",
-    "typedEnum",
     "oasDocumentSchema",
     "oasDiscriminator",
     "oasExample",
