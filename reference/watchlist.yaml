@@ -5,8 +5,11 @@ info:
   contact:
     name: Leor Brenman
     email: lbrenman@axway.com
-    url: 'mailto:lbrenman@axway.com'
+    url: lbrenman@axway.com
   description: Stock Watch List API
+  license:
+    name: N/A
+    url: www.axway.com/license
 servers:
   - url: 'http://localhost:8080/api'
     description: Local
