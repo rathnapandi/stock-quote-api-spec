@@ -550,20 +550,6 @@
     }
   },
   "rules": {
-    "queryParameter": {
-      "given": [
-        "#Request_Parameter_Query"
-      ],
-      "severity": "error",
-      "then": {
-        "function": "casing",
-        "functionOptions": {
-          "type": "camel"
-        },
-        "field": "name"
-      },
-      "message": "Query parameters should follow style guidelines"
-    },
     "contact-url": {
       "given": [
         "#API_Contact"
@@ -1253,6 +1239,108 @@
       "formats": [
         "oas3"
       ]
+    },
+    "query-parameter-camel-case": {
+      "given": [
+        "#Request_Parameter_Query"
+      ],
+      "severity": "error",
+      "then": {
+        "function": "casing",
+        "functionOptions": {
+          "type": "camel"
+        },
+        "field": "name"
+      },
+      "message": "Query parameters should be camel case"
+    },
+    "apikey-check": {
+      "given": [
+        "$.components.securitySchemes[*]"
+      ],
+      "severity": "error",
+      "then": {
+        "function": "enumeration",
+        "functionOptions": {
+          "values": [
+            "apiKey"
+          ]
+        },
+        "field": "type"
+      },
+      "message": "APIKey security should be used"
+    },
+    "apikey-namecheck": {
+      "given": [
+        "$.components.securitySchemes"
+      ],
+      "severity": "error",
+      "then": {
+        "function": "pattern",
+        "functionOptions": {
+          "match": "apiKey"
+        },
+        "field": "@key"
+      },
+      "message": "APIKey key name should be apiKey"
+    },
+    "apikey-typecheck": {
+      "given": [
+        "$.components.securitySchemes[*]"
+      ],
+      "severity": "error",
+      "then": {
+        "function": "enumeration",
+        "functionOptions": {
+          "values": [
+            "header"
+          ]
+        },
+        "field": "in"
+      },
+      "message": "APIKey should be sent in header"
+    },
+    "global-security-should-be-defined": {
+      "given": [
+        "$"
+      ],
+      "severity": "error",
+      "then": {
+        "function": "defined",
+        "field": "security"
+      },
+      "message": "Global security should be defined as APIKey"
+    },
+    "security-should-be-defined": {
+      "given": [
+        "$.components"
+      ],
+      "severity": "error",
+      "then": {
+        "function": "length",
+        "functionOptions": {
+          "min": 1,
+          "max": 1
+        },
+        "field": "securitySchemes"
+      },
+      "message": "Security should be defined as apiKey"
+    },
+    "set-global-security": {
+      "given": [
+        "$.security[*]"
+      ],
+      "severity": "error",
+      "then": {
+        "function": "enumeration",
+        "functionOptions": {
+          "values": [
+            "apiKey"
+          ]
+        },
+        "field": "@key"
+      },
+      "message": "Global security should be defined as APIKey"
     }
   },
   "functions": [

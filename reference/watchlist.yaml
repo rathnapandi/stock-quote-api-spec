@@ -88,8 +88,8 @@ paths:
 components:
   schemas: {}
   securitySchemes:
-    apikey:
-      name: apikey
+    apiKey:
+      name: API Key
       type: apiKey
       in: header
 tags:
@@ -98,4 +98,4 @@ tags:
   - name: Watch List
     description: Watch List
 security:
-  - apikey: []
+  - apiKey: []
