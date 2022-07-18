@@ -1070,7 +1070,7 @@
         "field": "schemes"
       },
       "description": "OpenAPI host \"schemes\" must be present and non-empty array.",
-      "message": "OpenAPI host \"schemes\" must be present and non-empty array.",
+      "message": "OpenAPI host \"schemes\" must be present and non-empty array",
       "formats": [
         "oas2"
       ]
@@ -1341,6 +1341,20 @@
         "field": "@key"
       },
       "message": "Global security should be defined as APIKey"
+    },
+    "serverurl-has-api-suffix": {
+      "given": [
+        "#API_Server_URL"
+      ],
+      "severity": "warn",
+      "then": {
+        "function": "pattern",
+        "functionOptions": {
+          "match": "/api$"
+        },
+        "field": "name"
+      },
+      "message": "API Server URL should have an /api suffix (e.g. http://localhost:8080/api)"
     }
   },
   "functions": [
