@@ -7,7 +7,7 @@
 	"apiDefinition": "openapi.yaml",
 	"vhost": "amplify.demo.axway.com:8065",
 	"image": "stock.png",
-	"backendBasepath": "https://api.ars.us.axway.com/api",
+	"backendBasepath": "https://engie-sandbox-design.aws-us2.dxchange.cloud:9443",
 	"descriptionType": "markdownLocal",
 	"markdownLocal": [
 	  "docs/Intro.md", "docs/Security.md"
@@ -18,16 +18,6 @@
 			"Chantilly"
 		]
 	},
-	"authenticationProfiles": [{
-		"name": "_default",
-		"isDefault": "true",
-		"parameters": {
-			"apiKey": "zSi3JeWExBJuCsLj5vumcPMrQFaYTOLa",
-			"apiKeyField": "apikey",
-			"httpLocation": "HEADER"
-		},
-		"type": "apiKey"
-	}],
 	"securityProfiles": [{
 		"name": "_default",
 		"isDefault": true,
