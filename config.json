@@ -7,7 +7,7 @@
 	"apiDefinition": "openapi.yaml",
 	"vhost": "amplify.demo.axway.com:8065",
 	"image": "stock.png",
-	"backendBasepath": "https://engie-sandbox-design.aws-us2.dxchange.cloud:9443",
+	"backendBasepath": "https://engie-sandbox-design.aws-us2.dxchange.cloud:9443/v2",
 	"descriptionType": "markdownLocal",
 	"markdownLocal": [
 	  "docs/Intro.md",
