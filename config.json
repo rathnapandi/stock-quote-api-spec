@@ -51,10 +51,6 @@
 	],
 	"clientOrganizations": [
 	  "ALL"
-	],
-	"customProperties": {
-	  "securityLevel": "public",
-	  "publicAPI": true
-	}
+	]
   }
   
