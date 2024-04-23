@@ -18,7 +18,7 @@
          <dependency>
             <groupId>com.github.axway-api-management-plus.apim-cli</groupId>
             <artifactId>apimcli-apis</artifactId>
-            <version>1.11.0</version>
+            <version>1.14.4</version>
         </dependency>
     </dependencies>
 
@@ -39,7 +39,7 @@
                 </executions>
                 <configuration>
                     <addResourcesToClasspath>true</addResourcesToClasspath>
-                    <mainClass>com.axway.apim.APIImportApp</mainClass>
+                    <mainClass>com.axway.apim.cli.APIManagerCLI</mainClass>
                     <classpath/>
                 </configuration>
             </plugin>
