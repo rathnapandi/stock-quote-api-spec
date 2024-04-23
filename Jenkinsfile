@@ -34,7 +34,7 @@ pipeline {
             }
             
             withCredentials([usernamePassword(credentialsId: "${stage}", usernameVariable: 'username', passwordVariable: 'password')])  {
-               sh 'mvn clean exec:java -Dexec.args="apim api -h ${host} -u ${username} -p ${password} -c  ${configFile} -force  -returnCodeMapping ${returnCodeMapping}"'
+               sh 'mvn clean exec:java -Dexec.args="apim api import -h ${host} -u ${username} -p ${password} -c  ${configFile} -force  -returnCodeMapping ${returnCodeMapping}"'
             }
      
          }
