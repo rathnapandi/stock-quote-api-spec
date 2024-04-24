@@ -3,15 +3,15 @@ info:
   title: watchlist
   version: '1.0'
   contact:
-    name: Leor Brenman
-    email: lbrenman@axway.com
-    url: https://www.axway.com/contact
+    name: Arun D
+    email: adorairajan@axway.com
+    url: 'https://www.axway.com/contact'
   description: Stock Watch List API
   license:
     name: N/A
-    url: https://www.axway.com/license
+    url: 'https://www.axway.com/license'
 servers:
-  - url: 'http://localhost:8080/api'
+  - url: 'http://localhost:8080/api/v1'
     description: Local
 paths:
   /watchlist:
