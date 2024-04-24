@@ -1,5 +1,5 @@
 {
-	"name": "Stock Watch List API",
+	"name": "Stock Watch List API v1",
 	"path": "/api/v1",
 	"state": "published",
 	"version": "1.0.0",
