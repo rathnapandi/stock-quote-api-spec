@@ -17,6 +17,9 @@
 	  "Imagine": [
 		"Axway",
 		"Chantilly"
+	  ],
+	  "nextStage": [
+		"preprod"
 	  ]
 	},
 	"authenticationProfiles": [{
