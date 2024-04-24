@@ -24,7 +24,6 @@
 	},
 	"authenticationProfiles": [{
 		"name": "_default",
-		"isDefault": true,
 		"isDefault": "true",
 		"parameters": {
 			"apiKey": "zSi3JeWExBJuCsLj5vumcPMrQFaYTOLa",
